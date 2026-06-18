@@ -1,350 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Al Hadi Tour And Travels Mumbai</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Al Hadi Tours and Travels</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family:Inter,sans-serif;
-  color:#17211b;
-  background:#fbfaf6;
-  line-height:1.6;
-}
+html{scroll-behavior:smooth}
+body{font-family:Inter,sans-serif;background:#fbfaf6;color:#14221b;line-height:1.6}
 a{text-decoration:none;color:inherit}
-img{max-width:100%;display:block}
+img{width:100%;display:block}
 
 :root{
-  --green:#0f3d2e;
-  --gold:#c9a24d;
-  --cream:#f5efe2;
-  --dark:#111814;
-  --muted:#6b736f;
-  --white:#fff;
+--green:#0d3b2e;
+--gold:#c9a24d;
+--cream:#f4efe3;
+--muted:#68736e;
+--dark:#081a13;
+--white:#fff;
 }
 
 .nav{
-  position:fixed;
-  top:0;
-  width:100%;
-  z-index:50;
-  background:rgba(255,255,255,.82);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid rgba(15,61,46,.08);
+position:fixed;top:0;width:100%;z-index:100;
+background:rgba(255,255,255,.85);
+backdrop-filter:blur(18px);
+border-bottom:1px solid rgba(13,59,46,.08)
 }
 .nav-inner{
-  max-width:1180px;
-  margin:auto;
-  padding:18px 22px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+max-width:1180px;margin:auto;padding:17px 22px;
+display:flex;align-items:center;justify-content:space-between
 }
-.logo{
-  font-weight:800;
-  color:var(--green);
-  letter-spacing:-.5px;
-  font-size:20px;
-}
+.logo{font-size:20px;font-weight:800;color:var(--green);letter-spacing:-.5px}
 .logo span{color:var(--gold)}
-.nav-links{
-  display:flex;
-  gap:26px;
-  font-size:14px;
-  color:#33413a;
-}
+.nav-links{display:flex;gap:26px;font-size:14px;color:#34423b}
 .btn{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  padding:13px 20px;
-  border-radius:999px;
-  font-weight:700;
-  font-size:14px;
-  transition:.3s ease;
+display:inline-flex;align-items:center;justify-content:center;gap:10px;
+padding:13px 20px;border-radius:999px;font-weight:700;font-size:14px;
+transition:.3s ease;border:0;cursor:pointer
 }
-.btn-primary{
-  background:var(--green);
-  color:white;
-  box-shadow:0 14px 34px rgba(15,61,46,.22);
-}
-.btn-primary:hover{transform:translateY(-3px)}
-.btn-outline{
-  border:1px solid rgba(15,61,46,.18);
-  color:var(--green);
-  background:white;
-}
+.btn-primary{background:var(--green);color:white;box-shadow:0 14px 35px rgba(13,59,46,.22)}
+.btn-outline{background:white;color:var(--green);border:1px solid rgba(13,59,46,.18)}
+.btn:hover{transform:translateY(-3px)}
 
 .hero{
-  min-height:100vh;
-  padding:140px 22px 70px;
-  background:
-    linear-gradient(90deg,rgba(7,30,22,.92),rgba(7,30,22,.58),rgba(7,30,22,.12)),
-    url("https://images.unsplash.com/photo-1589820296156-2454bb8a6ad1?q=80&w=1600&auto=format&fit=crop");
-  background-size:cover;
-  background-position:center;
-  color:white;
+min-height:100vh;padding:145px 22px 70px;color:white;
+background:
+linear-gradient(90deg,rgba(5,27,20,.94),rgba(5,27,20,.68),rgba(5,27,20,.16)),
+url("https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?q=80&w=1600&auto=format&fit=crop");
+background-size:cover;background-position:center
 }
 .hero-inner{
-  max-width:1180px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:1.05fr .75fr;
-  gap:50px;
-  align-items:center;
+max-width:1180px;margin:auto;
+display:grid;grid-template-columns:1.05fr .75fr;gap:45px;align-items:center
 }
 .badge{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  background:rgba(255,255,255,.12);
-  border:1px solid rgba(255,255,255,.22);
-  padding:9px 14px;
-  border-radius:999px;
-  font-size:13px;
-  margin-bottom:24px;
+display:inline-flex;padding:9px 14px;border-radius:999px;
+background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
+font-size:13px;margin-bottom:24px
 }
 .hero h1{
-  font-family:"Playfair Display",serif;
-  font-size:64px;
-  line-height:1.04;
-  max-width:720px;
+font-family:"Playfair Display",serif;font-size:64px;line-height:1.04;max-width:760px
 }
-.hero p{
-  margin-top:22px;
-  max-width:620px;
-  color:#e8efe9;
-  font-size:17px;
-}
-.hero-actions{
-  display:flex;
-  gap:14px;
-  margin-top:34px;
-  flex-wrap:wrap;
-}
+.hero p{margin-top:22px;max-width:620px;color:#e7eee9;font-size:17px}
+.hero-actions{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+
 .hero-card{
-  background:rgba(255,255,255,.14);
-  border:1px solid rgba(255,255,255,.22);
-  backdrop-filter:blur(18px);
-  border-radius:30px;
-  padding:26px;
-  animation:float 5s ease-in-out infinite;
+background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);
+backdrop-filter:blur(18px);border-radius:30px;padding:28px;
+animation:float 5s ease-in-out infinite
 }
-@keyframes float{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-12px)}
-}
-.hero-card h3{font-size:22px;margin-bottom:18px}
-.info{
-  display:flex;
-  gap:14px;
-  padding:14px 0;
-  border-bottom:1px solid rgba(255,255,255,.15);
-}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.hero-card h3{font-size:23px;margin-bottom:16px}
+.info{display:flex;gap:14px;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.14)}
 .info:last-child{border-bottom:0}
 .icon{
-  width:42px;height:42px;
-  border-radius:14px;
-  background:rgba(201,162,77,.18);
-  display:grid;
-  place-items:center;
-  flex-shrink:0;
+width:44px;height:44px;border-radius:15px;background:rgba(201,162,77,.18);
+display:grid;place-items:center;flex-shrink:0
 }
-.icon svg{width:22px;height:22px;stroke:var(--gold)}
-.info small{color:#d7ded9}
-.info strong{display:block}
+.icon svg{width:23px;height:23px;stroke:var(--gold);stroke-width:1.8}
+.info small{color:#d8e0dc}.info strong{display:block}
 
 section{padding:90px 22px}
 .container{max-width:1180px;margin:auto}
-.section-head{
-  max-width:720px;
-  margin-bottom:42px;
-}
-.kicker{
-  color:var(--gold);
-  font-weight:800;
-  text-transform:uppercase;
-  letter-spacing:1.5px;
-  font-size:12px;
-  margin-bottom:10px;
-}
-h2{
-  font-family:"Playfair Display",serif;
-  font-size:44px;
-  line-height:1.15;
-  color:var(--green);
-}
-.section-head p{
-  margin-top:14px;
-  color:var(--muted);
-}
+.kicker{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;font-weight:800;color:var(--gold);margin-bottom:10px}
+h2{font-family:"Playfair Display",serif;font-size:44px;line-height:1.15;color:var(--green)}
+.section-head{max-width:760px;margin-bottom:42px}
+.section-head p{color:var(--muted);margin-top:14px}
 
-.cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:22px;
-}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .card{
-  background:white;
-  border:1px solid rgba(15,61,46,.08);
-  border-radius:26px;
-  padding:28px;
-  box-shadow:0 18px 50px rgba(17,24,20,.06);
-  transition:.3s ease;
+background:white;border:1px solid rgba(13,59,46,.08);border-radius:28px;padding:28px;
+box-shadow:0 18px 50px rgba(17,24,20,.06);transition:.3s ease
 }
 .card:hover{transform:translateY(-8px)}
-.card h3{margin:18px 0 10px;color:var(--green)}
+.card h3{color:var(--green);margin:18px 0 10px}
 .card p{color:var(--muted);font-size:15px}
 
-.image-band{
-  background:var(--cream);
+.scroll-section{background:var(--cream);overflow:hidden}
+.image-scroll{
+display:flex;gap:18px;overflow-x:auto;padding-bottom:14px;scroll-snap-type:x mandatory
 }
-.gallery{
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:22px;
+.image-scroll::-webkit-scrollbar{height:8px}
+.image-scroll::-webkit-scrollbar-thumb{background:var(--gold);border-radius:99px}
+.place{
+min-width:380px;height:260px;border-radius:28px;overflow:hidden;position:relative;scroll-snap-align:start;
+box-shadow:0 18px 45px rgba(13,59,46,.12)
 }
-.gallery img{
-  height:430px;
-  width:100%;
-  object-fit:cover;
-  border-radius:30px;
+.place img{height:100%;object-fit:cover}
+.place::after{
+content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.58),transparent)
 }
-.gallery-small{
-  display:grid;
-  gap:22px;
+.place span{
+position:absolute;left:22px;bottom:18px;color:white;font-weight:800;font-size:20px;z-index:2
 }
-.gallery-small img{height:204px}
 
-.package-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-}
+.package-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
 .package{
-  border-radius:30px;
-  overflow:hidden;
-  background:white;
-  border:1px solid rgba(15,61,46,.08);
-  box-shadow:0 22px 60px rgba(15,61,46,.08);
+background:white;border-radius:30px;padding:28px;border:1px solid rgba(13,59,46,.08);
+box-shadow:0 22px 60px rgba(13,59,46,.08);transition:.3s ease
 }
-.package img{
-  height:220px;
-  width:100%;
-  object-fit:cover;
-}
-.package-content{padding:26px}
-.package-content h3{color:var(--green);font-size:23px}
-.package-content p{color:var(--muted);margin:10px 0 18px}
-.list{
-  display:grid;
-  gap:10px;
-  font-size:14px;
-}
-.list div{
-  display:flex;
-  gap:10px;
-  align-items:center;
-}
+.package:hover{transform:translateY(-8px)}
+.package h3{color:var(--green);font-size:24px;margin-bottom:8px}
+.price{font-size:14px;color:var(--gold);font-weight:800;margin-bottom:16px}
+.package p{color:var(--muted);font-size:15px;margin-bottom:18px}
+.list{display:grid;gap:10px;font-size:14px}
+.list div{display:flex;gap:10px}
 .tick{
-  width:18px;height:18px;
-  border-radius:50%;
-  background:#edf7f1;
-  color:var(--green);
-  display:grid;
-  place-items:center;
-  font-size:12px;
-  font-weight:800;
+width:18px;height:18px;border-radius:50%;background:#edf7f1;color:var(--green);
+display:grid;place-items:center;font-size:12px;font-weight:800;flex-shrink:0
 }
 
-.reviews{
-  background:#0f3d2e;
-  color:white;
+.visa-box{
+display:grid;grid-template-columns:.8fr 1.2fr;gap:35px;align-items:center;
+background:white;border-radius:34px;padding:38px;box-shadow:0 22px 60px rgba(13,59,46,.08)
 }
+.visa-art svg{width:100%;max-width:360px;margin:auto;display:block}
+
+.reviews{background:var(--green);color:white}
 .reviews h2{color:white}
-.review-wrap{
-  display:grid;
-  grid-template-columns:.8fr 1.2fr;
-  gap:34px;
-  align-items:center;
-}
+.review-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:34px;align-items:center}
 .rating-box{
-  background:rgba(255,255,255,.09);
-  border:1px solid rgba(255,255,255,.13);
-  border-radius:30px;
-  padding:34px;
+background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);
+border-radius:30px;padding:34px
 }
-.rating-number{
-  font-size:74px;
-  font-weight:800;
-  line-height:1;
-  color:var(--gold);
-}
-.stars{color:var(--gold);font-size:24px;margin:12px 0}
-.review-cards{
-  display:grid;
-  gap:18px;
-}
-.review-card{
-  background:white;
-  color:#17211b;
-  border-radius:24px;
-  padding:24px;
-}
-.review-card p{color:#4d5752}
+.rating-number{font-size:74px;font-weight:800;color:var(--gold);line-height:1}
+.stars{color:var(--gold);font-size:24px;margin:10px 0}
+.review-card{background:white;color:#14221b;border-radius:22px;padding:22px;margin-top:16px}
+.review-card p{color:#4d5752;margin-top:6px}
 
-.contact{
-  background:
-    linear-gradient(90deg,#fbfaf6 0%,#fbfaf6 55%,#f5efe2 55%);
+.enquiry{background:linear-gradient(90deg,#fbfaf6 0%,#fbfaf6 55%,#f4efe3 55%)}
+.form-grid{display:grid;grid-template-columns:1fr .95fr;gap:40px}
+form{
+background:white;border-radius:32px;padding:32px;box-shadow:0 22px 60px rgba(13,59,46,.08)
 }
-.contact-grid{
-  display:grid;
-  grid-template-columns:1fr .9fr;
-  gap:40px;
+.input-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+input,select,textarea{
+width:100%;padding:15px 16px;border-radius:14px;border:1px solid #dfe5df;
+font-family:Inter,sans-serif;font-size:14px;margin-bottom:14px;outline:none
 }
+textarea{height:120px;resize:none}
+input:focus,select:focus,textarea:focus{border-color:var(--gold)}
+
 .contact-card{
-  background:white;
-  padding:32px;
-  border-radius:30px;
-  box-shadow:0 22px 60px rgba(15,61,46,.08);
+background:white;padding:30px;border-radius:30px;box-shadow:0 22px 60px rgba(13,59,46,.08)
 }
-.contact-row{
-  display:flex;
-  gap:16px;
-  padding:18px 0;
-  border-bottom:1px solid #edf0eb;
-}
+.contact-row{display:flex;gap:15px;padding:16px 0;border-bottom:1px solid #edf0eb}
 .contact-row:last-child{border-bottom:0}
 
-.footer{
-  background:#081a13;
-  color:#d8e0db;
-  padding:30px 22px;
-  text-align:center;
-  font-size:14px;
-}
+.footer{background:var(--dark);color:#d8e0db;text-align:center;padding:30px 22px;font-size:14px}
 
-.fade{
-  opacity:0;
-  transform:translateY(24px);
-  animation:fadeUp .8s ease forwards;
-}
-@keyframes fadeUp{
-  to{opacity:1;transform:translateY(0)}
-}
+.fade{opacity:0;transform:translateY(24px);animation:fadeUp .8s ease forwards}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
 
-@media(max-width:900px){
-  .nav-links{display:none}
-  .hero-inner,.gallery,.review-wrap,.contact-grid{grid-template-columns:1fr}
-  .hero h1{font-size:44px}
-  h2{font-size:34px}
-  .cards,.package-grid{grid-template-columns:1fr}
-  .hero{padding-top:120px}
-  .contact{background:#fbfaf6}
+@media(max-width:950px){
+.nav-links{display:none}
+.hero-inner,.visa-box,.review-grid,.form-grid{grid-template-columns:1fr}
+.hero h1{font-size:43px}
+h2{font-size:34px}
+.cards,.package-grid{grid-template-columns:1fr}
+.enquiry{background:#fbfaf6}
+.place{min-width:300px;height:220px}
+.input-row{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -353,12 +192,12 @@ h2{
 
 <header class="nav">
   <div class="nav-inner">
-    <div class="logo">Al Hadi <span>Travels</span></div>
+    <div class="logo">Al Hadi <span>Tours and Travels</span></div>
     <nav class="nav-links">
       <a href="#services">Services</a>
+      <a href="#destinations">Places</a>
       <a href="#packages">Packages</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#contact">Contact</a>
+      <a href="#enquiry">Enquiry</a>
     </nav>
     <a class="btn btn-primary" href="tel:09167493183">Call Now</a>
   </div>
@@ -367,35 +206,33 @@ h2{
 <section class="hero">
   <div class="hero-inner">
     <div class="fade">
-      <div class="badge">
-        <span>Trusted Haj & Umrah Travel Assistance</span>
-      </div>
-      <h1>Begin your sacred journey with comfort, care and confidence.</h1>
+      <div class="badge">Haj, Umrah, Visa, Hotels and Group Travel</div>
+      <h1>Your sacred journey starts with trusted travel guidance.</h1>
       <p>
-        Al Hadi Tour And Travels Mumbai helps pilgrims with Umrah, Haj, visa assistance,
-        hotel coordination, group travel and international travel services.
+        Al Hadi Tours and Travels helps families and groups plan Haj and Umrah journeys with
+        visa assistance, hotel coordination, ticketing, insurance and customised travel support.
       </p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="tel:09167493183">Speak With Us</a>
-        <a class="btn btn-outline" href="#packages">View Services</a>
+        <a class="btn btn-primary" href="#enquiry">Send Enquiry</a>
+        <a class="btn btn-outline" href="tel:09167493183">Speak With Us</a>
       </div>
     </div>
 
     <div class="hero-card fade">
-      <h3>Travel Desk</h3>
+      <h3>Office Details</h3>
 
       <div class="info">
         <div class="icon">
-          <svg fill="none" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.12.89.32 1.76.59 2.6a2 2 0 0 1-.45 2.11L9 10.57a16 16 0 0 0 4.43 4.43l1.14-1.14a2 2 0 0 1 2.11-.45c.84.27 1.71.47 2.6.59A2 2 0 0 1 22 16.92Z"/></svg>
+          <svg fill="none" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 3 5.2 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L9 10.6a16 16 0 0 0 4.4 4.4l1.2-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 1.9Z"/></svg>
         </div>
         <div><small>Phone</small><strong>091674 93183</strong></div>
       </div>
 
       <div class="info">
         <div class="icon">
-          <svg fill="none" viewBox="0 0 24 24"><path d="M12 21s7-4.35 7-11a7 7 0 1 0-14 0c0 6.65 7 11 7 11Z"/><circle cx="12" cy="10" r="2"/></svg>
+          <svg fill="none" viewBox="0 0 24 24"><path d="M12 21s7-4.3 7-11a7 7 0 1 0-14 0c0 6.7 7 11 7 11Z"/><circle cx="12" cy="10" r="2"/></svg>
         </div>
-        <div><small>Office</small><strong>Dongri, Mandvi, Mumbai</strong></div>
+        <div><small>Location</small><strong>Dongri, Mandvi, Mumbai</strong></div>
       </div>
 
       <div class="info">
@@ -412,38 +249,45 @@ h2{
   <div class="container">
     <div class="section-head">
       <div class="kicker">Our Services</div>
-      <h2>Everything planned with attention to your journey.</h2>
-      <p>Simple, guided and reliable travel support for families, groups and individual pilgrims.</p>
+      <h2>Complete support for Haj, Umrah and international travel.</h2>
+      <p>Professional travel assistance with simple communication and proper guidance.</p>
     </div>
 
     <div class="cards">
       <div class="card">
         <div class="icon"><svg fill="none" viewBox="0 0 24 24"><path d="M3 21h18M6 18V9l6-5 6 5v9"/></svg></div>
-        <h3>Umrah Assistance</h3>
-        <p>Guidance for complete Umrah travel planning including visa, stay and travel coordination.</p>
+        <h3>Haj & Umrah Tours</h3>
+        <p>Guidance for family, individual and group travel with stay and travel coordination.</p>
       </div>
 
       <div class="card">
-        <div class="icon"><svg fill="none" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
-        <h3>Group Travel</h3>
-        <p>Organised travel support for groups with smooth coordination and clear communication.</p>
+        <div class="icon"><svg fill="none" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></div>
+        <h3>Visa Assistance</h3>
+        <p>Document support and process guidance for visa related travel requirements.</p>
       </div>
 
       <div class="card">
-        <div class="icon"><svg fill="none" viewBox="0 0 24 24"><path d="M4 22V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14"/><path d="M9 22v-6h6v6M8 10h.01M16 10h.01M8 14h.01M16 14h.01"/></svg></div>
-        <h3>Hotels & Stay</h3>
-        <p>Hotel coordination for a comfortable stay during your sacred journey.</p>
+        <div class="icon"><svg fill="none" viewBox="0 0 24 24"><path d="M4 22V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14"/><path d="M9 22v-6h6v6M8 10h.01M16 10h.01"/></svg></div>
+        <h3>Hotels & Travel</h3>
+        <p>Hotel booking help, international service, travel insurance and group planning.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="image-band">
-  <div class="container gallery">
-    <img src="https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?q=80&w=1200&auto=format&fit=crop" alt="Kaaba">
-    <div class="gallery-small">
-      <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=1200&auto=format&fit=crop" alt="Pilgrimage">
-      <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?q=80&w=1200&auto=format&fit=crop" alt="Travel">
+<section class="scroll-section" id="destinations">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Sacred Places</div>
+      <h2>Important places covered during your journey.</h2>
+    </div>
+
+    <div class="image-scroll">
+      <div class="place"><img src="https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?q=80&w=900&auto=format&fit=crop"><span>Kaaba, Makkah</span></div>
+      <div class="place"><img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=900&auto=format&fit=crop"><span>Masjid Al Haram</span></div>
+      <div class="place"><img src="https://images.unsplash.com/photo-1580418827493-f2b22c0a76cb?q=80&w=900&auto=format&fit=crop"><span>Makkah Clock Tower</span></div>
+      <div class="place"><img src="https://images.unsplash.com/photo-1585036156171-384164a8c675?q=80&w=900&auto=format&fit=crop"><span>Madinah</span></div>
+      <div class="place"><img src="https://images.unsplash.com/photo-1595246007497-15d5d1270df8?q=80&w=900&auto=format&fit=crop"><span>Mina</span></div>
     </div>
   </div>
 </section>
@@ -451,61 +295,91 @@ h2{
 <section id="packages">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">Travel Support</div>
-      <h2>Services designed for peace of mind.</h2>
+      <div class="kicker">Packages</div>
+      <h2>Choose a package that fits your comfort and budget.</h2>
     </div>
 
     <div class="package-grid">
       <div class="package">
-        <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=900&auto=format&fit=crop">
-        <div class="package-content">
-          <h3>Umrah Packages</h3>
-          <p>Reliable support for visa, ticket, hotel and travel planning.</p>
-          <div class="list">
-            <div><span class="tick">✓</span> Family & group options</div>
-            <div><span class="tick">✓</span> Visa guidance</div>
-            <div><span class="tick">✓</span> Hotel coordination</div>
-          </div>
+        <h3>Economy</h3>
+        <div class="price">Budget friendly</div>
+        <p>Suitable for travellers looking for essential facilities and guided support.</p>
+        <div class="list">
+          <div><span class="tick">✓</span> Visa guidance</div>
+          <div><span class="tick">✓</span> Shared stay option</div>
+          <div><span class="tick">✓</span> Basic travel support</div>
         </div>
       </div>
 
       <div class="package">
-        <img src="https://images.unsplash.com/photo-1522199710521-72d69614c702?q=80&w=900&auto=format&fit=crop">
-        <div class="package-content">
-          <h3>Visa Services</h3>
-          <p>Professional assistance for travel visa related requirements.</p>
-          <div class="list">
-            <div><span class="tick">✓</span> Documentation support</div>
-            <div><span class="tick">✓</span> Clear process guidance</div>
-            <div><span class="tick">✓</span> Timely updates</div>
-          </div>
+        <h3>Premium</h3>
+        <div class="price">Comfort focused</div>
+        <p>Balanced package with better stay options and smoother coordination.</p>
+        <div class="list">
+          <div><span class="tick">✓</span> Hotel coordination</div>
+          <div><span class="tick">✓</span> Group assistance</div>
+          <div><span class="tick">✓</span> Ticketing support</div>
         </div>
       </div>
 
       <div class="package">
-        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=900&auto=format&fit=crop">
-        <div class="package-content">
-          <h3>International Travel</h3>
-          <p>Ticketing, hotels, insurance and customised travel support.</p>
-          <div class="list">
-            <div><span class="tick">✓</span> Travel planning</div>
-            <div><span class="tick">✓</span> Hotel booking help</div>
-            <div><span class="tick">✓</span> Travel insurance</div>
-          </div>
+        <h3>Deluxe</h3>
+        <div class="price">High comfort</div>
+        <p>Designed for families who prefer better convenience and premium arrangements.</p>
+        <div class="list">
+          <div><span class="tick">✓</span> Premium hotel options</div>
+          <div><span class="tick">✓</span> Priority assistance</div>
+          <div><span class="tick">✓</span> Complete coordination</div>
+        </div>
+      </div>
+
+      <div class="package">
+        <h3>Custom</h3>
+        <div class="price">As per requirement</div>
+        <p>Build your own package based on travel dates, hotel preference and group size.</p>
+        <div class="list">
+          <div><span class="tick">✓</span> Flexible dates</div>
+          <div><span class="tick">✓</span> Custom hotel choice</div>
+          <div><span class="tick">✓</span> Family or group plan</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="reviews" id="reviews">
-  <div class="container review-wrap">
+<section>
+  <div class="container visa-box">
+    <div class="visa-art">
+      <svg viewBox="0 0 420 320" fill="none">
+        <rect x="70" y="35" width="230" height="270" rx="26" fill="#F4EFE3"/>
+        <rect x="95" y="65" width="180" height="210" rx="18" fill="#fff"/>
+        <path d="M125 105h120M125 135h120M125 165h80" stroke="#0d3b2e" stroke-width="10" stroke-linecap="round"/>
+        <rect x="125" y="195" width="70" height="48" rx="8" fill="#c9a24d"/>
+        <circle cx="310" cy="225" r="58" fill="#0d3b2e"/>
+        <path d="M285 225l17 17 36-39" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M305 78c30 12 52 38 61 70" stroke="#c9a24d" stroke-width="8" stroke-linecap="round"/>
+      </svg>
+    </div>
+
     <div>
-      <div class="kicker">Google Rating</div>
-      <h2>Trusted by travellers in Mumbai.</h2>
-      <p style="color:#d7ded9;margin-top:14px">
-        Rated 4.9 by customers for helpful service, smooth experience and good management.
+      <div class="kicker">Visa Assistance</div>
+      <h2>Visa process made simple with proper documentation support.</h2>
+      <p style="color:var(--muted);margin-top:14px">
+        Get guidance for document preparation, submission process, travel dates and package planning.
       </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#enquiry">Ask For Visa Help</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="container review-grid">
+    <div>
+      <div class="kicker">Google Reviews</div>
+      <h2>Rated 4.9 by customers.</h2>
+      <p style="color:#d7ded9;margin-top:14px">Trusted for good service, visa support and smooth travel experience.</p>
     </div>
 
     <div class="rating-box">
@@ -513,55 +387,81 @@ h2{
       <div class="stars">★★★★★</div>
       <p>Based on 43 Google reviews</p>
 
-      <div class="review-cards" style="margin-top:24px">
-        <div class="review-card">
-          <strong>Best service experience</strong>
-          <p>“Best price, good person, best service ever.”</p>
-        </div>
-        <div class="review-card">
-          <strong>Visa work support</strong>
-          <p>“My visa work was done within 8 days. Excellent management.”</p>
-        </div>
+      <div class="review-card">
+        <strong>Best service experience</strong>
+        <p>Best price, good person, best service ever.</p>
+      </div>
+
+      <div class="review-card">
+        <strong>Excellent management</strong>
+        <p>Visa work completed smoothly with proper support.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="contact" id="contact">
-  <div class="container contact-grid">
+<section class="enquiry" id="enquiry">
+  <div class="container form-grid">
     <div>
-      <div class="kicker">Visit Us</div>
-      <h2>Plan your Haj or Umrah journey with Al Hadi Tour And Travels.</h2>
-      <p style="color:var(--muted);margin-top:16px">
-        Reach out for package details, visa assistance, hotel options and group travel planning.
+      <div class="kicker">Enquiry Form</div>
+      <h2>Tell us your travel requirement.</h2>
+      <p style="color:var(--muted);margin-top:14px">
+        Fill the form and the team can contact you with package details, visa guidance and travel options.
       </p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="tel:09167493183">Call 091674 93183</a>
-        <a class="btn btn-outline" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Al+Hadi+Tour+And+Travels+Mumbai+400009">Get Directions</a>
+
+      <div class="contact-card" style="margin-top:28px">
+        <div class="contact-row">
+          <div class="icon"><svg fill="none" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 3 5.2"/></svg></div>
+          <div><strong>Phone</strong><br>091674 93183</div>
+        </div>
+
+        <div class="contact-row">
+          <div class="icon"><svg fill="none" viewBox="0 0 24 24"><path d="M12 21s7-4.3 7-11a7 7 0 1 0-14 0c0 6.7 7 11 7 11Z"/></svg></div>
+          <div><strong>Address</strong><br>Shop No.9, Ground Floor, Zulekha Manzil, 71/75, Pala Gali, Bhat Bazar, Dongri, Mandvi, Mumbai, Maharashtra 400009</div>
+        </div>
       </div>
     </div>
 
-    <div class="contact-card">
-      <div class="contact-row">
-        <div class="icon"><svg fill="none" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72"/></svg></div>
-        <div><strong>Phone</strong><br>091674 93183</div>
+    <form>
+      <div class="input-row">
+        <input type="text" placeholder="Full Name">
+        <input type="tel" placeholder="Phone Number">
       </div>
 
-      <div class="contact-row">
-        <div class="icon"><svg fill="none" viewBox="0 0 24 24"><path d="M12 21s7-4.35 7-11a7 7 0 1 0-14 0c0 6.65 7 11 7 11Z"/></svg></div>
-        <div><strong>Address</strong><br>Shop No.9, Ground Floor, Zulekha Manzil, 71/75, Pala Gali, Bhat Bazar, Dongri, Mandvi, Mumbai, Maharashtra 400009</div>
+      <div class="input-row">
+        <select>
+          <option selected disabled>Select Package</option>
+          <option>Economy</option>
+          <option>Premium</option>
+          <option>Deluxe</option>
+          <option>Custom Package</option>
+        </select>
+
+        <select>
+          <option selected disabled>Travel Type</option>
+          <option>Umrah</option>
+          <option>Haj</option>
+          <option>Visa Assistance</option>
+          <option>International Travel</option>
+        </select>
       </div>
 
-      <div class="contact-row">
-        <div class="icon"><svg fill="none" viewBox="0 0 24 24"><path d="M12 8v5l3 2"/><circle cx="12" cy="12" r="10"/></svg></div>
-        <div><strong>Business Hours</strong><br>Open · Closes 8:30 PM</div>
+      <div class="input-row">
+        <input type="text" placeholder="Number of Travellers">
+        <input type="text" placeholder="Preferred Travel Month">
       </div>
-    </div>
+
+      <textarea placeholder="Your message or special requirement"></textarea>
+
+      <button class="btn btn-primary" type="button" onclick="alert('Demo form only. Connect this form with WhatsApp or backend later.')">
+        Submit Enquiry
+      </button>
+    </form>
   </div>
 </section>
 
 <footer class="footer">
-  © 2026 Al Hadi Tour And Travels Mumbai. Demo website designed for presentation.
+  © 2026 Al Hadi Tours and Travels. Demo website for client presentation.
 </footer>
 
 </body>
