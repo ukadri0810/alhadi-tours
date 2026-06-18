@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Al Hadi Tours and Travels</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -18,172 +18,584 @@ img{width:100%;display:block}
 --green:#0d3b2e;
 --gold:#c9a24d;
 --cream:#f4efe3;
---muted:#68736e;
---dark:#081a13;
+--muted:#66726c;
+--dark:#071912;
 --white:#fff;
 }
 
+body::before{
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+background-image:
+radial-gradient(circle at 20% 20%,rgba(201,162,77,.06),transparent 28%),
+radial-gradient(circle at 80% 10%,rgba(13,59,46,.06),transparent 26%);
+z-index:-1;
+}
+
 .nav{
-position:fixed;top:0;width:100%;z-index:100;
-background:rgba(255,255,255,.85);
+position:fixed;
+top:0;
+width:100%;
+z-index:100;
+background:rgba(255,255,255,.86);
 backdrop-filter:blur(18px);
 border-bottom:1px solid rgba(13,59,46,.08)
 }
 .nav-inner{
-max-width:1180px;margin:auto;padding:17px 22px;
-display:flex;align-items:center;justify-content:space-between
+max-width:1180px;
+margin:auto;
+padding:15px 22px;
+display:flex;
+align-items:center;
+justify-content:space-between
 }
-.logo{font-size:20px;font-weight:800;color:var(--green);letter-spacing:-.5px}
-.logo span{color:var(--gold)}
-.nav-links{display:flex;gap:26px;font-size:14px;color:#34423b}
+.brand{
+display:flex;
+align-items:center;
+gap:12px;
+}
+.brand-mark{
+width:48px;
+height:48px;
+border-radius:16px;
+background:linear-gradient(135deg,var(--green),#14523f);
+display:grid;
+place-items:center;
+position:relative;
+box-shadow:0 12px 30px rgba(13,59,46,.22);
+}
+.brand-mark::after{
+content:"";
+position:absolute;
+inset:7px;
+border:1px solid rgba(201,162,77,.75);
+border-radius:12px;
+}
+.brand-mark span{
+font-family:"Playfair Display",serif;
+color:var(--gold);
+font-weight:700;
+font-size:21px;
+z-index:2;
+}
+.logo-text strong{
+display:block;
+color:var(--green);
+font-size:17px;
+font-weight:900;
+line-height:1.1;
+letter-spacing:-.4px;
+}
+.logo-text small{
+color:var(--gold);
+font-size:11px;
+font-weight:800;
+letter-spacing:1.6px;
+}
+.nav-links{
+display:flex;
+gap:26px;
+font-size:14px;
+color:#34423b;
+font-weight:600
+}
 .btn{
-display:inline-flex;align-items:center;justify-content:center;gap:10px;
-padding:13px 20px;border-radius:999px;font-weight:700;font-size:14px;
-transition:.3s ease;border:0;cursor:pointer
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+padding:13px 20px;
+border-radius:999px;
+font-weight:800;
+font-size:14px;
+transition:.3s ease;
+border:0;
+cursor:pointer
 }
-.btn-primary{background:var(--green);color:white;box-shadow:0 14px 35px rgba(13,59,46,.22)}
-.btn-outline{background:white;color:var(--green);border:1px solid rgba(13,59,46,.18)}
+.btn-primary{
+background:var(--green);
+color:white;
+box-shadow:0 14px 35px rgba(13,59,46,.22)
+}
+.btn-outline{
+background:white;
+color:var(--green);
+border:1px solid rgba(13,59,46,.18)
+}
+.btn-gold{
+background:var(--gold);
+color:#18130a;
+}
 .btn:hover{transform:translateY(-3px)}
 
 .hero{
-min-height:100vh;padding:145px 22px 70px;color:white;
+min-height:100vh;
+padding:145px 22px 70px;
+color:white;
 background:
-linear-gradient(90deg,rgba(5,27,20,.94),rgba(5,27,20,.68),rgba(5,27,20,.16)),
-url("https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?q=80&w=1600&auto=format&fit=crop");
-background-size:cover;background-position:center
+linear-gradient(90deg,rgba(5,27,20,.96),rgba(5,27,20,.72),rgba(5,27,20,.2)),
+url("https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?q=80&w=1800&auto=format&fit=crop");
+background-size:cover;
+background-position:center;
 }
 .hero-inner{
-max-width:1180px;margin:auto;
-display:grid;grid-template-columns:1.05fr .75fr;gap:45px;align-items:center
+max-width:1180px;
+margin:auto;
+display:grid;
+grid-template-columns:1.05fr .75fr;
+gap:45px;
+align-items:center
 }
 .badge{
-display:inline-flex;padding:9px 14px;border-radius:999px;
-background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
-font-size:13px;margin-bottom:24px
+display:inline-flex;
+padding:9px 14px;
+border-radius:999px;
+background:rgba(255,255,255,.12);
+border:1px solid rgba(255,255,255,.22);
+font-size:13px;
+margin-bottom:24px
 }
 .hero h1{
-font-family:"Playfair Display",serif;font-size:64px;line-height:1.04;max-width:760px
+font-family:"Playfair Display",serif;
+font-size:64px;
+line-height:1.04;
+max-width:760px
 }
-.hero p{margin-top:22px;max-width:620px;color:#e7eee9;font-size:17px}
-.hero-actions{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.hero p{
+margin-top:22px;
+max-width:620px;
+color:#e7eee9;
+font-size:17px
+}
+.hero-actions{
+display:flex;
+gap:14px;
+margin-top:34px;
+flex-wrap:wrap
+}
+.trust-row{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+margin-top:34px;
+}
+.trust-item{
+background:rgba(255,255,255,.11);
+border:1px solid rgba(255,255,255,.16);
+padding:13px 16px;
+border-radius:18px;
+}
+.trust-item strong{
+display:block;
+color:var(--gold);
+font-size:22px;
+line-height:1;
+}
+.trust-item small{color:#dce5df}
 
 .hero-card{
-background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);
-backdrop-filter:blur(18px);border-radius:30px;padding:28px;
+background:rgba(255,255,255,.13);
+border:1px solid rgba(255,255,255,.2);
+backdrop-filter:blur(18px);
+border-radius:30px;
+padding:28px;
 animation:float 5s ease-in-out infinite
 }
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 .hero-card h3{font-size:23px;margin-bottom:16px}
-.info{display:flex;gap:14px;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.info{
+display:flex;
+gap:14px;
+padding:15px 0;
+border-bottom:1px solid rgba(255,255,255,.14)
+}
 .info:last-child{border-bottom:0}
 .icon{
-width:44px;height:44px;border-radius:15px;background:rgba(201,162,77,.18);
-display:grid;place-items:center;flex-shrink:0
+width:44px;
+height:44px;
+border-radius:15px;
+background:rgba(201,162,77,.18);
+display:grid;
+place-items:center;
+flex-shrink:0
 }
-.icon svg{width:23px;height:23px;stroke:var(--gold);stroke-width:1.8}
-.info small{color:#d8e0dc}.info strong{display:block}
+.icon svg{
+width:23px;
+height:23px;
+stroke:var(--gold);
+stroke-width:1.8
+}
+.info small{color:#d8e0dc}
+.info strong{display:block}
 
 section{padding:90px 22px}
 .container{max-width:1180px;margin:auto}
-.kicker{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;font-weight:800;color:var(--gold);margin-bottom:10px}
-h2{font-family:"Playfair Display",serif;font-size:44px;line-height:1.15;color:var(--green)}
-.section-head{max-width:760px;margin-bottom:42px}
-.section-head p{color:var(--muted);margin-top:14px}
+.kicker{
+font-size:12px;
+letter-spacing:1.5px;
+text-transform:uppercase;
+font-weight:900;
+color:var(--gold);
+margin-bottom:10px
+}
+h2{
+font-family:"Playfair Display",serif;
+font-size:44px;
+line-height:1.15;
+color:var(--green)
+}
+.section-head{
+max-width:760px;
+margin-bottom:42px
+}
+.section-head p{
+color:var(--muted);
+margin-top:14px
+}
 
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:22px
+}
 .card{
-background:white;border:1px solid rgba(13,59,46,.08);border-radius:28px;padding:28px;
-box-shadow:0 18px 50px rgba(17,24,20,.06);transition:.3s ease
+background:white;
+border:1px solid rgba(13,59,46,.08);
+border-radius:28px;
+padding:28px;
+box-shadow:0 18px 50px rgba(17,24,20,.06);
+transition:.3s ease
 }
 .card:hover{transform:translateY(-8px)}
 .card h3{color:var(--green);margin:18px 0 10px}
 .card p{color:var(--muted);font-size:15px}
 
-.scroll-section{background:var(--cream);overflow:hidden}
+.scroll-section{
+background:var(--cream);
+overflow:hidden
+}
 .image-scroll{
-display:flex;gap:18px;overflow-x:auto;padding-bottom:14px;scroll-snap-type:x mandatory
+display:flex;
+gap:18px;
+overflow-x:auto;
+padding-bottom:14px;
+scroll-snap-type:x mandatory
 }
 .image-scroll::-webkit-scrollbar{height:8px}
-.image-scroll::-webkit-scrollbar-thumb{background:var(--gold);border-radius:99px}
+.image-scroll::-webkit-scrollbar-thumb{
+background:var(--gold);
+border-radius:99px
+}
 .place{
-min-width:380px;height:260px;border-radius:28px;overflow:hidden;position:relative;scroll-snap-align:start;
+min-width:390px;
+height:265px;
+border-radius:28px;
+overflow:hidden;
+position:relative;
+scroll-snap-align:start;
 box-shadow:0 18px 45px rgba(13,59,46,.12)
 }
-.place img{height:100%;object-fit:cover}
+.place img{
+height:100%;
+object-fit:cover
+}
 .place::after{
-content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.58),transparent)
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(0deg,rgba(0,0,0,.65),transparent)
 }
 .place span{
-position:absolute;left:22px;bottom:18px;color:white;font-weight:800;font-size:20px;z-index:2
+position:absolute;
+left:22px;
+bottom:18px;
+color:white;
+font-weight:900;
+font-size:20px;
+z-index:2
 }
 
-.package-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.package-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:22px
+}
 .package{
-background:white;border-radius:30px;padding:28px;border:1px solid rgba(13,59,46,.08);
-box-shadow:0 22px 60px rgba(13,59,46,.08);transition:.3s ease
+background:white;
+border-radius:30px;
+padding:28px;
+border:1px solid rgba(13,59,46,.08);
+box-shadow:0 22px 60px rgba(13,59,46,.08);
+transition:.3s ease;
+position:relative;
+overflow:hidden
+}
+.package::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+right:0;
+height:5px;
+background:linear-gradient(90deg,var(--green),var(--gold));
 }
 .package:hover{transform:translateY(-8px)}
-.package h3{color:var(--green);font-size:24px;margin-bottom:8px}
-.price{font-size:14px;color:var(--gold);font-weight:800;margin-bottom:16px}
-.package p{color:var(--muted);font-size:15px;margin-bottom:18px}
-.list{display:grid;gap:10px;font-size:14px}
-.list div{display:flex;gap:10px}
+.package h3{
+color:var(--green);
+font-size:24px;
+margin-bottom:8px
+}
+.price{
+font-size:14px;
+color:var(--gold);
+font-weight:900;
+margin-bottom:16px
+}
+.package p{
+color:var(--muted);
+font-size:15px;
+margin-bottom:18px
+}
+.list{
+display:grid;
+gap:10px;
+font-size:14px
+}
+.list div{
+display:flex;
+gap:10px
+}
 .tick{
-width:18px;height:18px;border-radius:50%;background:#edf7f1;color:var(--green);
-display:grid;place-items:center;font-size:12px;font-weight:800;flex-shrink:0
+width:18px;
+height:18px;
+border-radius:50%;
+background:#edf7f1;
+color:var(--green);
+display:grid;
+place-items:center;
+font-size:12px;
+font-weight:900;
+flex-shrink:0
+}
+
+.comparison{
+margin-top:42px;
+background:white;
+border-radius:30px;
+overflow:hidden;
+box-shadow:0 22px 60px rgba(13,59,46,.08);
+border:1px solid rgba(13,59,46,.08)
+}
+table{
+width:100%;
+border-collapse:collapse;
+font-size:14px
+}
+th,td{
+padding:18px;
+text-align:left;
+border-bottom:1px solid #edf0eb
+}
+th{
+background:#f7f2e8;
+color:var(--green);
+font-weight:900
+}
+td{color:#425049}
+
+.timeline{
+background:#fff;
+}
+.steps{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:18px
+}
+.step{
+background:#fbfaf6;
+border:1px solid rgba(13,59,46,.08);
+border-radius:24px;
+padding:24px;
+position:relative
+}
+.step span{
+width:36px;
+height:36px;
+border-radius:50%;
+background:var(--green);
+color:white;
+display:grid;
+place-items:center;
+font-weight:900;
+margin-bottom:14px
+}
+.step h3{
+color:var(--green);
+font-size:17px;
+margin-bottom:6px
+}
+.step p{
+color:var(--muted);
+font-size:14px
 }
 
 .visa-box{
-display:grid;grid-template-columns:.8fr 1.2fr;gap:35px;align-items:center;
-background:white;border-radius:34px;padding:38px;box-shadow:0 22px 60px rgba(13,59,46,.08)
+display:grid;
+grid-template-columns:.8fr 1.2fr;
+gap:35px;
+align-items:center;
+background:white;
+border-radius:34px;
+padding:38px;
+box-shadow:0 22px 60px rgba(13,59,46,.08)
 }
-.visa-art svg{width:100%;max-width:360px;margin:auto;display:block}
+.visa-art svg{
+width:100%;
+max-width:360px;
+margin:auto;
+display:block
+}
 
-.reviews{background:var(--green);color:white}
+.reviews{
+background:var(--green);
+color:white
+}
 .reviews h2{color:white}
-.review-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:34px;align-items:center}
+.review-grid{
+display:grid;
+grid-template-columns:.8fr 1.2fr;
+gap:34px;
+align-items:center
+}
 .rating-box{
-background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);
-border-radius:30px;padding:34px
+background:rgba(255,255,255,.09);
+border:1px solid rgba(255,255,255,.14);
+border-radius:30px;
+padding:34px
 }
-.rating-number{font-size:74px;font-weight:800;color:var(--gold);line-height:1}
-.stars{color:var(--gold);font-size:24px;margin:10px 0}
-.review-card{background:white;color:#14221b;border-radius:22px;padding:22px;margin-top:16px}
-.review-card p{color:#4d5752;margin-top:6px}
+.rating-number{
+font-size:74px;
+font-weight:900;
+color:var(--gold);
+line-height:1
+}
+.stars{
+color:var(--gold);
+font-size:24px;
+margin:10px 0
+}
+.review-card{
+background:white;
+color:#14221b;
+border-radius:22px;
+padding:22px;
+margin-top:16px
+}
+.review-card p{
+color:#4d5752;
+margin-top:6px
+}
 
-.enquiry{background:linear-gradient(90deg,#fbfaf6 0%,#fbfaf6 55%,#f4efe3 55%)}
-.form-grid{display:grid;grid-template-columns:1fr .95fr;gap:40px}
+.enquiry{
+background:linear-gradient(90deg,#fbfaf6 0%,#fbfaf6 55%,#f4efe3 55%)
+}
+.form-grid{
+display:grid;
+grid-template-columns:1fr .95fr;
+gap:40px
+}
 form{
-background:white;border-radius:32px;padding:32px;box-shadow:0 22px 60px rgba(13,59,46,.08)
+background:white;
+border-radius:32px;
+padding:32px;
+box-shadow:0 22px 60px rgba(13,59,46,.08)
 }
-.input-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.input-row{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px
+}
 input,select,textarea{
-width:100%;padding:15px 16px;border-radius:14px;border:1px solid #dfe5df;
-font-family:Inter,sans-serif;font-size:14px;margin-bottom:14px;outline:none
+width:100%;
+padding:15px 16px;
+border-radius:14px;
+border:1px solid #dfe5df;
+font-family:Inter,sans-serif;
+font-size:14px;
+margin-bottom:14px;
+outline:none
 }
-textarea{height:120px;resize:none}
-input:focus,select:focus,textarea:focus{border-color:var(--gold)}
-
+textarea{
+height:120px;
+resize:none
+}
+input:focus,select:focus,textarea:focus{
+border-color:var(--gold)
+}
 .contact-card{
-background:white;padding:30px;border-radius:30px;box-shadow:0 22px 60px rgba(13,59,46,.08)
+background:white;
+padding:30px;
+border-radius:30px;
+box-shadow:0 22px 60px rgba(13,59,46,.08)
 }
-.contact-row{display:flex;gap:15px;padding:16px 0;border-bottom:1px solid #edf0eb}
+.contact-row{
+display:flex;
+gap:15px;
+padding:16px 0;
+border-bottom:1px solid #edf0eb
+}
 .contact-row:last-child{border-bottom:0}
 
-.footer{background:var(--dark);color:#d8e0db;text-align:center;padding:30px 22px;font-size:14px}
+.whatsapp{
+position:fixed;
+right:22px;
+bottom:22px;
+width:58px;
+height:58px;
+background:#25D366;
+border-radius:50%;
+display:grid;
+place-items:center;
+box-shadow:0 14px 35px rgba(0,0,0,.2);
+z-index:150
+}
+.whatsapp svg{
+width:30px;
+height:30px;
+fill:white
+}
 
-.fade{opacity:0;transform:translateY(24px);animation:fadeUp .8s ease forwards}
-@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+.footer{
+background:var(--dark);
+color:#d8e0db;
+text-align:center;
+padding:30px 22px;
+font-size:14px
+}
+
+.fade{
+opacity:0;
+transform:translateY(24px);
+animation:fadeUp .8s ease forwards
+}
+@keyframes fadeUp{
+to{opacity:1;transform:translateY(0)}
+}
 
 @media(max-width:950px){
 .nav-links{display:none}
 .hero-inner,.visa-box,.review-grid,.form-grid{grid-template-columns:1fr}
 .hero h1{font-size:43px}
 h2{font-size:34px}
-.cards,.package-grid{grid-template-columns:1fr}
+.cards,.package-grid,.steps{grid-template-columns:1fr}
 .enquiry{background:#fbfaf6}
 .place{min-width:300px;height:220px}
 .input-row{grid-template-columns:1fr}
+table{font-size:13px}
+th,td{padding:13px}
+.logo-text strong{font-size:14px}
 }
 </style>
 </head>
@@ -192,13 +604,22 @@ h2{font-size:34px}
 
 <header class="nav">
   <div class="nav-inner">
-    <div class="logo">Al Hadi <span>Tours and Travels</span></div>
+    <a href="#" class="brand">
+      <div class="brand-mark"><span>AH</span></div>
+      <div class="logo-text">
+        <strong>Al Hadi Tours</strong>
+        <small>& TRAVELS</small>
+      </div>
+    </a>
+
     <nav class="nav-links">
       <a href="#services">Services</a>
       <a href="#destinations">Places</a>
       <a href="#packages">Packages</a>
+      <a href="#process">Process</a>
       <a href="#enquiry">Enquiry</a>
     </nav>
+
     <a class="btn btn-primary" href="tel:09167493183">Call Now</a>
   </div>
 </header>
@@ -207,14 +628,23 @@ h2{font-size:34px}
   <div class="hero-inner">
     <div class="fade">
       <div class="badge">Haj, Umrah, Visa, Hotels and Group Travel</div>
+
       <h1>Your sacred journey starts with trusted travel guidance.</h1>
+
       <p>
         Al Hadi Tours and Travels helps families and groups plan Haj and Umrah journeys with
         visa assistance, hotel coordination, ticketing, insurance and customised travel support.
       </p>
+
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#enquiry">Send Enquiry</a>
+        <a class="btn btn-gold" href="#enquiry">Request Package Details</a>
         <a class="btn btn-outline" href="tel:09167493183">Speak With Us</a>
+      </div>
+
+      <div class="trust-row">
+        <div class="trust-item"><strong>4.9</strong><small>Google Rating</small></div>
+        <div class="trust-item"><strong>43+</strong><small>Reviews</small></div>
+        <div class="trust-item"><strong>Mumbai</strong><small>Based Agency</small></div>
       </div>
     </div>
 
@@ -250,24 +680,30 @@ h2{font-size:34px}
     <div class="section-head">
       <div class="kicker">Our Services</div>
       <h2>Complete support for Haj, Umrah and international travel.</h2>
-      <p>Professional travel assistance with simple communication and proper guidance.</p>
+      <p>Professional travel assistance with clear communication, proper guidance and reliable coordination.</p>
     </div>
 
     <div class="cards">
       <div class="card">
-        <div class="icon"><svg fill="none" viewBox="0 0 24 24"><path d="M3 21h18M6 18V9l6-5 6 5v9"/></svg></div>
+        <div class="icon">
+          <svg fill="none" viewBox="0 0 24 24"><path d="M3 21h18M6 18V9l6-5 6 5v9"/></svg>
+        </div>
         <h3>Haj & Umrah Tours</h3>
         <p>Guidance for family, individual and group travel with stay and travel coordination.</p>
       </div>
 
       <div class="card">
-        <div class="icon"><svg fill="none" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></div>
+        <div class="icon">
+          <svg fill="none" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg>
+        </div>
         <h3>Visa Assistance</h3>
         <p>Document support and process guidance for visa related travel requirements.</p>
       </div>
 
       <div class="card">
-        <div class="icon"><svg fill="none" viewBox="0 0 24 24"><path d="M4 22V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14"/><path d="M9 22v-6h6v6M8 10h.01M16 10h.01"/></svg></div>
+        <div class="icon">
+          <svg fill="none" viewBox="0 0 24 24"><path d="M4 22V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14"/><path d="M9 22v-6h6v6M8 10h.01M16 10h.01"/></svg>
+        </div>
         <h3>Hotels & Travel</h3>
         <p>Hotel booking help, international service, travel insurance and group planning.</p>
       </div>
@@ -280,14 +716,39 @@ h2{font-size:34px}
     <div class="section-head">
       <div class="kicker">Sacred Places</div>
       <h2>Important places covered during your journey.</h2>
+      <p>Swipe horizontally to view Makkah, Madinah and Hajj related places.</p>
     </div>
 
     <div class="image-scroll">
-      <div class="place"><img src="https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?q=80&w=900&auto=format&fit=crop"><span>Kaaba, Makkah</span></div>
-      <div class="place"><img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=900&auto=format&fit=crop"><span>Masjid Al Haram</span></div>
-      <div class="place"><img src="https://images.unsplash.com/photo-1580418827493-f2b22c0a76cb?q=80&w=900&auto=format&fit=crop"><span>Makkah Clock Tower</span></div>
-      <div class="place"><img src="https://images.unsplash.com/photo-1585036156171-384164a8c675?q=80&w=900&auto=format&fit=crop"><span>Madinah</span></div>
-      <div class="place"><img src="https://images.unsplash.com/photo-1595246007497-15d5d1270df8?q=80&w=900&auto=format&fit=crop"><span>Mina</span></div>
+      <div class="place">
+        <img src="https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?q=80&w=900&auto=format&fit=crop" alt="Kaaba">
+        <span>Kaaba, Makkah</span>
+      </div>
+
+      <div class="place">
+        <img src="https://images.unsplash.com/photo-1580418827493-f2b22c0a76cb?q=80&w=900&auto=format&fit=crop" alt="Makkah Clock Tower">
+        <span>Makkah Clock Tower</span>
+      </div>
+
+      <div class="place">
+        <img src="https://theislamicinformation.com/wp-content/uploads/2022/06/Cooking-Gas-Ban-Mina-Muzdalifah-Arafat-Hajj-2022.jpg" alt="Mina">
+        <span>Mina</span>
+      </div>
+
+      <div class="place">
+        <img src="https://islamicrelief.org.au/wp-content/uploads/2024/04/pexels-yasirgurbuz-12765598-1024x683.jpg" alt="Arafat">
+        <span>Arafat</span>
+      </div>
+
+      <div class="place">
+        <img src="https://images.unsplash.com/photo-1585036156171-384164a8c675?q=80&w=900&auto=format&fit=crop" alt="Madinah">
+        <span>Madinah</span>
+      </div>
+
+      <div class="place">
+        <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=900&auto=format&fit=crop" alt="Masjid Al Haram">
+        <span>Masjid Al Haram</span>
+      </div>
     </div>
   </div>
 </section>
@@ -297,6 +758,7 @@ h2{font-size:34px}
     <div class="section-head">
       <div class="kicker">Packages</div>
       <h2>Choose a package that fits your comfort and budget.</h2>
+      <p>Package details can be customised based on travel dates, hotel preference, family size and availability.</p>
     </div>
 
     <div class="package-grid">
@@ -344,6 +806,82 @@ h2{font-size:34px}
         </div>
       </div>
     </div>
+
+    <div class="comparison">
+      <table>
+        <tr>
+          <th>Feature</th>
+          <th>Economy</th>
+          <th>Premium</th>
+          <th>Deluxe</th>
+        </tr>
+        <tr>
+          <td>Visa Assistance</td>
+          <td>Included</td>
+          <td>Included</td>
+          <td>Included</td>
+        </tr>
+        <tr>
+          <td>Hotel Category</td>
+          <td>Standard</td>
+          <td>Better Comfort</td>
+          <td>Premium Stay</td>
+        </tr>
+        <tr>
+          <td>Travel Support</td>
+          <td>Basic</td>
+          <td>Priority</td>
+          <td>Dedicated</td>
+        </tr>
+        <tr>
+          <td>Best For</td>
+          <td>Budget travellers</td>
+          <td>Families</td>
+          <td>Comfort seekers</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="timeline" id="process">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Simple Process</div>
+      <h2>From enquiry to departure, everything is guided step by step.</h2>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <span>1</span>
+        <h3>Send Enquiry</h3>
+        <p>Share travel month, package type and number of travellers.</p>
+      </div>
+
+      <div class="step">
+        <span>2</span>
+        <h3>Package Discussion</h3>
+        <p>Get suitable options based on comfort and budget.</p>
+      </div>
+
+      <div class="step">
+        <span>3</span>
+        <h3>Visa Support</h3>
+        <p>Receive guidance for required documents and process.</p>
+      </div>
+
+      <div class="step">
+        <span>4</span>
+        <h3>Hotel & Travel</h3>
+        <p>Flight, hotel and travel coordination is planned.</p>
+      </div>
+
+      <div class="step">
+        <span>5</span>
+        <h3>Departure</h3>
+        <p>Begin your journey with proper travel assistance.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -379,7 +917,9 @@ h2{font-size:34px}
     <div>
       <div class="kicker">Google Reviews</div>
       <h2>Rated 4.9 by customers.</h2>
-      <p style="color:#d7ded9;margin-top:14px">Trusted for good service, visa support and smooth travel experience.</p>
+      <p style="color:#d7ded9;margin-top:14px">
+        Trusted for good service, visa support and smooth travel experience.
+      </p>
     </div>
 
     <div class="rating-box">
@@ -411,25 +951,39 @@ h2{font-size:34px}
 
       <div class="contact-card" style="margin-top:28px">
         <div class="contact-row">
-          <div class="icon"><svg fill="none" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 3 5.2"/></svg></div>
+          <div class="icon">
+            <svg fill="none" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 3 5.2"/></svg>
+          </div>
           <div><strong>Phone</strong><br>091674 93183</div>
         </div>
 
         <div class="contact-row">
-          <div class="icon"><svg fill="none" viewBox="0 0 24 24"><path d="M12 21s7-4.3 7-11a7 7 0 1 0-14 0c0 6.7 7 11 7 11Z"/></svg></div>
-          <div><strong>Address</strong><br>Shop No.9, Ground Floor, Zulekha Manzil, 71/75, Pala Gali, Bhat Bazar, Dongri, Mandvi, Mumbai, Maharashtra 400009</div>
+          <div class="icon">
+            <svg fill="none" viewBox="0 0 24 24"><path d="M12 21s7-4.3 7-11a7 7 0 1 0-14 0c0 6.7 7 11 7 11Z"/></svg>
+          </div>
+          <div>
+            <strong>Address</strong><br>
+            Shop No.9, Ground Floor, Zulekha Manzil, 71/75, Pala Gali, Bhat Bazar, Dongri, Mandvi, Mumbai, Maharashtra 400009
+          </div>
+        </div>
+
+        <div class="contact-row">
+          <div class="icon">
+            <svg fill="none" viewBox="0 0 24 24"><path d="M12 8v5l3 2"/><circle cx="12" cy="12" r="10"/></svg>
+          </div>
+          <div><strong>Timing</strong><br>Open till 8:30 PM</div>
         </div>
       </div>
     </div>
 
     <form>
       <div class="input-row">
-        <input type="text" placeholder="Full Name">
-        <input type="tel" placeholder="Phone Number">
+        <input type="text" id="name" placeholder="Full Name">
+        <input type="tel" id="phone" placeholder="Phone Number">
       </div>
 
       <div class="input-row">
-        <select>
+        <select id="package">
           <option selected disabled>Select Package</option>
           <option>Economy</option>
           <option>Premium</option>
@@ -437,7 +991,7 @@ h2{font-size:34px}
           <option>Custom Package</option>
         </select>
 
-        <select>
+        <select id="travel">
           <option selected disabled>Travel Type</option>
           <option>Umrah</option>
           <option>Haj</option>
@@ -447,22 +1001,44 @@ h2{font-size:34px}
       </div>
 
       <div class="input-row">
-        <input type="text" placeholder="Number of Travellers">
-        <input type="text" placeholder="Preferred Travel Month">
+        <input type="text" id="travellers" placeholder="Number of Travellers">
+        <input type="text" id="month" placeholder="Preferred Travel Month">
       </div>
 
-      <textarea placeholder="Your message or special requirement"></textarea>
+      <textarea id="message" placeholder="Your message or special requirement"></textarea>
 
-      <button class="btn btn-primary" type="button" onclick="alert('Demo form only. Connect this form with WhatsApp or backend later.')">
-        Submit Enquiry
+      <button class="btn btn-primary" type="button" onclick="sendWhatsApp()">
+        Request Package Details
       </button>
     </form>
   </div>
 </section>
 
+<a class="whatsapp" href="https://wa.me/919167493183" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32">
+    <path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.8 2 6.8L3.7 29l6.6-1.7c1.8 1 3.7 1.5 5.8 1.5 7.2 0 13-5.7 13-12.8S23.2 3 16 3Zm0 23.6c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.9 1 1-3.8-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.8 0-5.9 4.7-10.6 10.5-10.6S26.7 10 26.7 15.9 21.8 26.6 16 26.6Zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.7.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2.1-.4 0-.6-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.3 1.4 3.5c.2.2 2.4 3.7 5.8 5.1.8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4Z"/>
+  </svg>
+</a>
+
 <footer class="footer">
   © 2026 Al Hadi Tours and Travels. Demo website for client presentation.
 </footer>
+
+<script>
+function sendWhatsApp(){
+  const name = document.getElementById("name").value || "Not provided";
+  const phone = document.getElementById("phone").value || "Not provided";
+  const packageType = document.getElementById("package").value || "Not selected";
+  const travel = document.getElementById("travel").value || "Not selected";
+  const travellers = document.getElementById("travellers").value || "Not provided";
+  const month = document.getElementById("month").value || "Not provided";
+  const message = document.getElementById("message").value || "No message";
+
+  const text = `Assalamu Alaikum, I want package details.%0A%0AName: ${name}%0APhone: ${phone}%0APackage: ${packageType}%0ATravel Type: ${travel}%0ATravellers: ${travellers}%0APreferred Month: ${month}%0AMessage: ${message}`;
+
+  window.open(`https://wa.me/919167493183?text=${text}`, "_blank");
+}
+</script>
 
 </body>
 </html>
